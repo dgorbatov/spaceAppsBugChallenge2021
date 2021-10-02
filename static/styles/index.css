@@ -1,0 +1,112 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: hidden;
+  }
+  
+  header {
+    height: 5vh;
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  header #nav-links {
+    width: 15vw;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  header h1 {
+    font-size: 2.3rem;
+  }
+  
+  .blue-text {
+    color: #0000FF;
+  }
+  
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/static/images/bugs.jpg');
+    height: 95vh;
+    width: 100vw;
+  }
+  
+  main .main-block {
+    z-index: 5;
+    height: 70vh;
+    width: 60vw;
+    background-color: #FFFFFF;
+    display: block;
+    border-radius: 4%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .main-block > section {
+    display: flex;
+    flex-direction: row;
+    font-size: 4rem;
+    height: 10vh;
+    margin-bottom: 7vh;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .main-block p {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+  
+  .main-block > form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+  }
+  
+  .main-block > form > section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+    font-size: 1.2rem;
+  }
+  
+  .main-block > form > button {
+    background-color: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 7vh;
+    width: 10vw;
+    font-size: 1.3rem;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+  
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+    

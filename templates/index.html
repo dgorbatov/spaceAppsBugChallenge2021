@@ -1,24 +1,55 @@
-Welcome to Farm Free!
+<!DOCTYPE html>
 
-<br/>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ommatdium</title>
 
-<br/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
 
-Upload an image of a bug
+        <link rel="stylesheet" href= "{{ url_for('static',filename='styles/index.css') }}">
+    </head>
 
-<br/>
+    <body>
+        <header>
+            <a href="/" style="color: black; text-decoration: none;">
+                <section>
+                    <h1>Farm</h1>
+                    <h1 class="blue-text">Free</h1>
+                </section>
+            </a>
 
-<br/>
+            <section id="nav-links">
+                <a href="/scan" style="color: black;"><h1>Scan</h1></a>
+                <a href="/map" style="color: black;"><h1>Map</h1></a>
+            </section>
+        </header>
 
-<form action="/" method="POST" enctype="multipart/form-data">
+        <hr>
+        <main>
+            <section class="main-block">
+                <section>
+                    <h1>Bug</h1>
+                    <h1 class="blue-text">Scan</h1>
+                </section>
 
-    <div class="form-group">
-              <label>Select image</label>
-              <div class="custom-file">
-                <input type="file" class="custom-file-input" name="image" id="image" accept="image/*" >
-                <label class="custom-file-label" for="image">Select image...</label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Upload</button>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea coodo consequat. Duis aute irure dolor in reprehen in voluptate </p>
 
-    </form>
+                <form action="/" method="POST" enctype="multipart/form-data">
+                    <section>
+                        <h2>Upload Bug Image</h2>
+                        <input type="file" class="custom-file-input" name="image" id="image" accept="image/*" >
+                        <label class="custom-file-label" for="image"><h2 class="blue-text">SELECT</h2></label>
+                        
+                    </section>
+
+                    <button>Submit</button>
+
+
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
