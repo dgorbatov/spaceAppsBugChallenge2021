@@ -49,7 +49,7 @@ def index():
             url = image.filename
 
             # pass the image to the ML model and get result
-            # assuming model will return bug name: 
+            # assuming model will return bug name:
 
             bug_name = "test-bug"
 
@@ -63,7 +63,7 @@ def index():
             location = str(geolocator.reverse(g.latlng))
 
             # add bug info to DB
-            
+
             db.collection('bugs').add({"name":f"{bug_name}", "location":location})
 
             return redirect(f"/bug/{bug_name}")

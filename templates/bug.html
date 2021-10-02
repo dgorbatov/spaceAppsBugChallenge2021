@@ -1,11 +1,50 @@
-<!--- This is a sample to showcase how the backend connects with the frontend ---> 
+<!DOCTYPE html>
 
-<html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ommatdium</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href= "{{ url_for('static',filename='styles/bug.css') }}">
+    </head>
+
     <body>
-        <Title>{{ name }}</Title>
-        <img src="{{ image_url }}"><img/>
-        <h1>{{ name }}</h1>
-        <h2>{{ harmful_or_not }}</h2>
-        <h1>{{ further_steps }}</h1>
+        <header>
+            <a href="/" style="color: black; text-decoration: none;">
+                <section>
+                    <h1>Farm</h1>
+                    <h1 class="blue-text">Free</h1>
+                </section>
+            </a>
+
+            <section id="nav-links">
+                <a href="/" style="color: black;"><h1>Scan</h1></a>
+                <a href="/map" style="color: black;"><h1>Map</h1></a>
+            </section>
+        </header>
+
+        <hr>
+        <main>
+            <article>
+                <img src="{{ image_url }}">
+                <article>
+                    <section>
+                        <h1>DETECTED:</h1>
+                        <h1 class="blue-text">{{ name }}</h1>
+                    </section>
+
+                    <section>
+                        <h1>RESULT:</h1>
+                        <h1 class="red-text">{{ harmful_or_not }}</h1>
+                    </section>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea coodo consequat. Duis aute irure dolor in reprehen in voluptate .</p>
+                </article>
+            </article>
+        </main>
     </body>
 </html>
