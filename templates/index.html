@@ -10,10 +10,15 @@ Upload an image of a bug
 
 <br/>
 
-<form action="/action_page.php">
-    <input type="file" name="myImage" accept="image/*" />
+<form action="/" method="POST" enctype="multipart/form-data">
 
-    <br/>
-    <br/>
-    <input type="submit">
-</form>
+    <div class="form-group">
+              <label>Select image</label>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="image" id="image" accept="image/*" >
+                <label class="custom-file-label" for="image">Select image...</label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+
+    </form>
