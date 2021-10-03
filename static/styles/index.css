@@ -140,3 +140,7 @@ h2 {
   font-family: "Red Hat Display";
   margin-top: -10px;
 }
+
+.green-text {
+  color: green;
+}
