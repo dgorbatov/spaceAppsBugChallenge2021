@@ -82,7 +82,7 @@ def map():
     cords = []
 
     for doc in docs:
-        cords.append(f'{doc.id} => {doc.to_dict()}')
+        cords.append(doc.to_dict())
 
     cords = json.dumps(cords)
     return render_template("map.html", cords=cords);
