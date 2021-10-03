@@ -1,15 +1,7 @@
-import os
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
-from tempfile import mkdtemp
-from werkzeug.datastructures import ContentSecurityPolicy
-from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
-from werkzeug.security import check_password_hash, generate_password_hash
-from datetime import datetime
-import shortuuid
+from flask import Flask, redirect, render_template, request
 import firebase_admin
-from firebase_admin import credentials, firestore, storage
+from firebase_admin import credentials, firestore
 from werkzeug.utils import secure_filename
-from os.path import join, dirname, realpath
 from geopy.geocoders import Nominatim
 import geocoder
 import requests
@@ -93,9 +85,6 @@ def map():
 
 @app.route("/bug/<name>",  methods=["GET", "POST"])
 def bug(name):
-    # get data from API based on bug name
-
-    response = requests.get("https://api.gbif.org/v1/species/search?q=" + name).json()
     bug_name = "Bug Not Found"
     image_url = "https://earthbox.com/media/wysiwyg/images/insect/large/Eastern-boxelder-bug.jpg"
     harmful_or_not = "No Data"
