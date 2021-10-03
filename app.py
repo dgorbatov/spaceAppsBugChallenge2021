@@ -1,6 +1,7 @@
 import os
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from tempfile import mkdtemp
+from werkzeug.datastructures import ContentSecurityPolicy
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime
@@ -12,6 +13,7 @@ from os.path import join, dirname, realpath
 from geopy.geocoders import Nominatim
 import geocoder
 import requests
+import json
 
 # configure firebase DB
 
@@ -71,6 +73,19 @@ def index():
 
     else:
         return render_template("index.html")
+
+
+@app.route("/map",  methods=["GET"])
+def map():
+    users_ref = db.collection("bugs")
+    docs = users_ref.stream()
+    cords = []
+
+    for doc in docs:
+        cords.append(f'{doc.id} => {doc.to_dict()}')
+
+    cords = json.dumps(cords)
+    return render_template("map.html", cords=cords);
 
 @app.route("/bug/<name>",  methods=["GET", "POST"])
 def bug(name):
