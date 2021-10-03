@@ -6,45 +6,18 @@ body {
   overflow-y: hidden;
 }
 
-header {
-  height: 5vh;
-  width: 95vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-}
-
-header #nav-links {
-  width: 15vw;
-  display: flex;
-  justify-content: space-evenly;
-}
-a {
-  margin-left: 20px;
-}
-
-header h1 {
-  font-size: 2.3rem;
-}
-
 .blue-text {
-  color: #0000ff;
+  color: #3f3fd3;
 }
 
 main {
+  position: absolute;
+  top: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url("/static/images/bugs.jpg");
-  height: 95vh;
+  height: 100vh;
   width: 100vw;
 }
 
@@ -142,5 +115,5 @@ h2 {
 }
 
 .green-text {
-  color: green;
+  color: rgb(40, 109, 40);
 }

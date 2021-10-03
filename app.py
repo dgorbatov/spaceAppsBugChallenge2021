@@ -14,6 +14,7 @@ from geopy.geocoders import Nominatim
 import geocoder
 import requests
 import json
+import csv;
 
 # configure firebase DB
 
@@ -43,6 +44,10 @@ def after_request(response):
 
 @app.route("/",  methods=["GET", "POST"])
 def index():
+    return render_template("index.html")
+
+@app.route("/home",  methods=["GET", "POST"])
+def home():
     if request.method == "POST":
         if request.files:
             image = request.files["image"]
@@ -72,8 +77,7 @@ def index():
             return redirect(f"/bug/{bug_name}")
 
     else:
-        return render_template("index.html")
-
+        return render_template("home.html")
 
 @app.route("/map",  methods=["GET"])
 def map():
@@ -93,16 +97,40 @@ def bug(name):
 
     response = requests.get("https://api.gbif.org/v1/species/search?q=" + name).json()
     bug_name = "Bug Not Found"
-    description = "sample description"
     image_url = "https://earthbox.com/media/wysiwyg/images/insect/large/Eastern-boxelder-bug.jpg"
-    harmful_or_not = "harmful"
-    further_steps = "take these steps"
+    harmful_or_not = "No Data"
+    science_name = "No Data"
+    pesticide = "No Data"
+    crop = "No Data"
 
-    if (response["count"] > 0):
-        bug_name = response["results"][0]["scientificName"]
-        description = "sample description"
-        image_url = "https://earthbox.com/media/wysiwyg/images/insect/large/Eastern-boxelder-bug.jpg"
-        harmful_or_not = "harmful"
-        further_steps = "take these steps"
+    filename = "bugdata.csv"
+    rows = []
+    with open(filename, 'r') as csvfile:
+        csvreader = csv.reader(csvfile)
+        for row in csvreader:
+            rows.append(row)
 
-    return render_template("bug.html", name=bug_name, description=description, image_url=image_url, harmful_or_not=harmful_or_not, further_steps=further_steps)
+    data = []
+    for rowdata in rows:
+        if rowdata[0].lower() == name.lower():
+            data = rowdata
+            break
+
+    if data != []:
+        bug_name = data[0]
+        image_url = data[5]
+        science_name = data[3]
+        pesticide = data[4]
+        crop = data[2]
+
+        if data[1] == '0':
+            harmful_or_not = "harmful"
+        else:
+            harmful_or_not = "not harmful"
+
+    return render_template("bug.html", name=bug_name,
+                                       image_url=image_url,
+                                       harmful_or_not=harmful_or_not,
+                                       science_name=science_name,
+                                       pesticide=pesticide,
+                                       crop=crop)

@@ -3,44 +3,41 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ommadium</title>
-        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
-        <link rel="stylesheet" href="dist/css/home.css">
-        <link rel="icon" type="image/png" href="dist/images/favicon.png"/>
+        <title>Ommatdium</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href= "/static/styles/index.css">
     </head>
 
-    <body background="dist/images/img.png">
+    <body>
 
-        <div class="wrapper">
-            <div class="mainarea">
-                <p class="heading">BUG SCAN</p>
-                <br>
-                <p class="details"> Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amit Lorem ipsum sor de amitLorem ipsum sor de amit.</p>
-                <br>
-                <form action="/" method="POST" enctype="multipart/form-data">
-                    <section>
-                        <h2 class="bugimg">Upload Bug Image</h2>
-                        <input type="file" class="custom-file-input" name="image" id="image" accept="image/*" required>
-                        <br>
-                        <label class="custom-file-label" for="image"><h2 class="blue-text">SELECT</h2></label>
+        <hr>
+        <main>
+            <section class="main-block">
+                <section class="bugscan">
+                    <h1 class="green-text">Bug</h1>
+                    <h1 class="blue-text">Scan</h1>
+                </section>
 
-                    </section>
-                    <button>Submit</button>
-                </form>
-            </div>
-        </div>
+                <p class="description">Please upload an image of your bug so that we can classify it. To upload
+                    a picture click on the select text, select your image and then hit the submit button. After
+                    that we will run our ML model to determine what bug is in your picture!
+                </p>
 
-    </body>
-</html>
- <!--  <form action="/" method="POST" enctype="multipart/form-data">
+                <form action="/home" method="POST" enctype="multipart/form-data">
                     <section>
                         <h2>Upload Bug Image</h2>
-                       < <input type="file" class="custom-file-input" name="image" id="image" accept="image/*" required>
+                        <input type="file" class="custom-file-input" name="image" id="image" accept="image/*" required>
                         <label class="custom-file-label" for="image"><h2 class="blue-text">SELECT</h2></label>
 
                     </section>
+
                     <button>Submit</button>
                 </form>
-                -->
+            </section>
+        </main>
+    </body>
+</html>

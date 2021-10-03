@@ -27,8 +27,10 @@ header #nav-links {
   display: flex;
   justify-content: space-evenly;
 }
+
 a {
   margin-left: 20px;
+  text-decoration: none;
 }
 
 header h1 {
@@ -37,4 +39,7 @@ header h1 {
 
 .blue-text {
   color: #0000ff;
+}
+.green-text {
+  color: green;
 }

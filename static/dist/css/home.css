@@ -6,14 +6,18 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+
 .mainarea {
-  height: 500px;
-  width: 800px;
-  background-color: #242830;
+  height: 70vh;
+  width: 50vw;
+  background-color: white;
   border: 0px black;
   border-radius: 20px;
-  color: white;
+  color: black;
 }
+
+
 .heading {
   padding-top: 30px;
   font-size: 50px;
@@ -34,4 +38,24 @@
 .custom-file-input {
   float: right;
   display: inline;
+}
+
+.main-block > form > button {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
+  height: 7vh;
+  width: 10vw;
+  font-size: 1.3rem;
+  font-family: "Red Hat Display";
+  margin-top: -30px;
+}
+button:hover {
+  color: white;
+  background-color: black !important;
+}
+
+input[type="file"] {
+  display: none;
 }
