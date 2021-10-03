@@ -1,53 +1,102 @@
 <!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Ommatdium</title>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href= "/static//styles/index.css">
-    </head>
-
-    <body>
-        <header>
-            <a href="/" style="color: black; text-decoration: none;">
-                <section>
-                    <h1 class="green-text">Omma</h1>
-                    <h1 class="blue-text">tdium</h1>
-                </section>
-            </a>
-
-            <section id="nav-links">
-                <a href="/" style="color: black;"><h1>Scan</h1></a>
-                <a href="/map" style="color: black;"><h1>Map</h1></a>
-            </section>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ommadium</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="icon" type="image/png" href="dist/images/favicon.png"/>
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+							<a href="#">
+								<img class="header-logo-image" src="dist/images/logo.png" alt="Logo">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
         </header>
 
-        <hr>
         <main>
-            <section class="main-block">
-                <section class="bugscan">
-                    <h1>Bug</h1>
-                    <h1 class="blue-text">Scan</h1>
-                </section>
-
-                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea coodo consequat. Duis aute irure dolor in reprehen in </p>
-
-                <form action="/" method="POST" enctype="multipart/form-data">
-                    <section>
-                        <h2>Upload Bug Image</h2>
-                        <input type="file" class="custom-file-input" name="image" id="image" accept="image/*" required>
-                        <label class="custom-file-label" for="image"><h2 class="blue-text">SELECT</h2></label>
-
-                    </section>
-
-                    <button>Submit</button>
-                </form>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+						<div class="hero-copy">
+	                        <h1 class="hero-title mt-0">Ommadium</h1>
+	                        <p class="hero-paragraph">Dont let bugs eat your profit. A machine learning powered application that can detect which bugs are harmful for your crop and which are not. Also predicts future bug invasions.</p>
+	                        <div class="hero-cta"><a class="button button-primary" href="home.html">SCAN A BUG</a><a class="button" href="map.html">VIEW HEATMAP</a></div>
+						</div>
+						<div class="hero-figure anime-element">
+							<svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">
+								<rect width="528" height="396" style="fill:transparent;" />
+							</svg>
+							<div class="hero-figure-box hero-figure-box-01" data-rotation="45deg"></div>
+							<div class="hero-figure-box hero-figure-box-02" data-rotation="-45deg"></div>
+							<div class="hero-figure-box hero-figure-box-03" data-rotation="0deg"></div>
+							<div class="hero-figure-box hero-figure-box-04" data-rotation="-135deg"></div>
+							<div class="hero-figure-box hero-figure-box-05">
+                                <img src="dist/images/favicon.png" alt="">
+                            </div>
+							<div class="hero-figure-box hero-figure-box-06"></div>
+							<div class="hero-figure-box hero-figure-box-07"></div>
+							<div class="hero-figure-box hero-figure-box-08" data-rotation="-22deg"></div>
+							<div class="hero-figure-box hero-figure-box-09" data-rotation="-52deg"></div>
+							<div class="hero-figure-box hero-figure-box-10" data-rotation="-50deg"></div>
+						</div>
+                    </div>
+                </div>
             </section>
-        </main>
-    </body>
+
+            <section class="features section">
+                <div class="container">
+                    <h1>Features:</h1>
+					<div class="features-inner section-inner has-bottom-divider">
+                        <div class="features-wrap">
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="dist/images/feature-icon-01.svg" alt="Feature 01">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Scan</h4>
+                                    <p class="text-sm mb-0">Just take a picture of the bug. Thats it! Our app will do the rest. Using Machine learning, Ommadium identifies the bug, the app will also tell you if the bug is good/medium/bad for your specific plant and suggests next steps</p>
+                                </div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="dist/images/feature-icon-02.svg" alt="Feature 02">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Track</h4>
+                                    <p class="text-sm mb-0">Ommadium crowdsources data for mutual benefit. Bugs scanned/reported are added to a map where mutual users within a 2 km radius are notified about the bug. If they can have it, You could have it too!</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="dist/images/feature-icon-03.svg" alt="Feature 03">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Warn</h4>
+                                    <p class="text-sm mb-0">Ommadium can do much more. The Heatmap shows current bug density for your location. We also use Machine learning to predict future bug invasions for your area. The mutual bug reports are also visible here.</p>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    </div>
+
+    <script src="dist/js/main.min.js"></script>
+</body>
 </html>
