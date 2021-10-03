@@ -62,8 +62,14 @@
                 color: 'red',
                 fillColor: '#f03',
                 fillOpacity: 0.5
-              }).addTo(mymap).bindPopup("Be aware this area might contain " + i.name);
+              }).addTo(mymap).bindPopup("Be prepared this area might contain " + i.name);
             }
+
+
+                     // Creating a Layer object
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         mymap.addLayer(layer);  // Adding layer to the map
+
           </script>
         </main>
     </body>
