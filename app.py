@@ -11,6 +11,7 @@ from werkzeug.utils import secure_filename
 from os.path import join, dirname, realpath
 from geopy.geocoders import Nominatim
 import geocoder
+import requests
 
 # configure firebase DB
 
@@ -75,9 +76,18 @@ def index():
 def bug(name):
     # get data from API based on bug name
 
+    response = requests.get("https://api.gbif.org/v1/species/search?q=" + name).json()
+    bug_name = "Bug Not Found"
     description = "sample description"
     image_url = "https://earthbox.com/media/wysiwyg/images/insect/large/Eastern-boxelder-bug.jpg"
     harmful_or_not = "harmful"
     further_steps = "take these steps"
 
-    return render_template("bug.html", name=name, description=description, image_url=image_url, harmful_or_not=harmful_or_not, further_steps=further_steps)
+    if (response["count"] > 0):
+        bug_name = response["results"][0]["scientificName"]
+        description = "sample description"
+        image_url = "https://earthbox.com/media/wysiwyg/images/insect/large/Eastern-boxelder-bug.jpg"
+        harmful_or_not = "harmful"
+        further_steps = "take these steps"
+
+    return render_template("bug.html", name=bug_name, description=description, image_url=image_url, harmful_or_not=harmful_or_not, further_steps=further_steps)
